@@ -14,106 +14,6 @@ import 'package:flutter/material.dart';
 //       ));
 // }
 
-class MainAppBar extends StatelessWidget {
-  const MainAppBar(
-      {super.key,
-      required this.score,
-      required this.totalScore,
-      required this.level,
-      required this.lotuscount,
-      required this.flamecount,
-      required this.crowncount});
-
-  final int score;
-  final int totalScore;
-  final String level;
-  final int lotuscount;
-  final int flamecount;
-  final int crowncount;
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: PreferredSize(
-          preferredSize:
-              Size.fromHeight(116), // Set the preferred height of the app bar
-          child: AppBar(
-              toolbarHeight: 116,
-              title: Container(
-                padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 17),
-                width: MediaQuery.of(context).size.width,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 11),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Level $level',
-                            style: TextStyle(
-                                fontSize: 13,
-                                fontFamily: 'Montserrat',
-                                color: Color(0xff140562)),
-                          ),
-                          RichText(
-                            text: TextSpan(
-                              text: '$score/',
-                              style: TextStyle(
-                                  color: Color(0xff140562),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 13,
-                                  fontFamily: 'Montserrat'),
-                              children: <TextSpan>[
-                                TextSpan(
-                                    text: '$totalScore exp',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 13,
-                                        color: Color(0xff140562)
-                                            .withOpacity(0.65))),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 7),
-                    ProgressBar(
-                        width: MediaQuery.of(context).size.width - 80,
-                        height: 16,
-                        progress: score / totalScore),
-                    SizedBox(height: 20),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 31),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          reward(
-                              imageName: 'assets/noun-lotus-6636109 2.png',
-                              counter: lotuscount,
-                              rewardColor: Color(0xffFF4B4B)),
-                          reward(
-                              imageName: 'assets/Icon.png',
-                              counter: flamecount,
-                              rewardColor: Color(0xffFF9600)),
-                          reward(
-                              imageName: 'assets/Vectors.png',
-                              counter: crowncount,
-                              rewardColor: Color(0xffFF9600))
-                        ],
-                      ),
-                    ) // for exemple a score of 20/200 = 0.1 (or 10 %)
-                  ],
-                ),
-              )),
-        ),
-      ),
-    );
-  }
-}
-
 class ProgressBar extends StatelessWidget {
   const ProgressBar(
       {super.key,
@@ -171,4 +71,99 @@ class reward extends StatelessWidget {
       ],
     );
   }
+}
+
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CustomAppBar(
+      {super.key,
+      required this.score,
+      required this.totalScore,
+      required this.level,
+      required this.lotuscount,
+      required this.flamecount,
+      required this.crowncount});
+
+  final int score;
+  final int totalScore;
+  final String level;
+  final int lotuscount;
+  final int flamecount;
+  final int crowncount;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        toolbarHeight: 116,
+        title: Container(
+          padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 17),
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 11),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Level $level',
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontFamily: 'Montserrat',
+                          color: Color(0xff140562)),
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        text: '$score/',
+                        style: TextStyle(
+                            color: Color(0xff140562),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 13,
+                            fontFamily: 'Montserrat'),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: '$totalScore exp',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 13,
+                                  color: Color(0xff140562).withOpacity(0.65))),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 7),
+              ProgressBar(
+                  width: MediaQuery.of(context).size.width - 80,
+                  height: 16,
+                  progress: score / totalScore),
+              SizedBox(height: 20),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 31),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    reward(
+                        imageName: 'assets/noun-lotus-6636109 2.png',
+                        counter: lotuscount,
+                        rewardColor: Color(0xffFF4B4B)),
+                    reward(
+                        imageName: 'assets/Icon.png',
+                        counter: flamecount,
+                        rewardColor: Color(0xffFF9600)),
+                    reward(
+                        imageName: 'assets/Vectors.png',
+                        counter: crowncount,
+                        rewardColor: Color(0xffFF9600))
+                  ],
+                ),
+              ) // for exemple a score of 20/200 = 0.1 (or 10 %)
+            ],
+          ),
+        ));
+  }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => const Size.fromHeight(116);
 }

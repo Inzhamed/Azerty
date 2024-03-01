@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wiro/component/appbar.dart';
 import 'package:wiro/component/navbar.dart';
 import 'package:wiro/const.dart';
 
@@ -14,8 +15,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('hhhhh'),
+        appBar: const CustomAppBar(
+          score: 12,
+          crowncount: 1,
+          totalScore: 200,
+          level: '2',
+          lotuscount: 1,
+          flamecount: 1,
         ),
         body: SizedBox(
           height: MediaQuery.of(context).size.height,
@@ -23,103 +29,60 @@ class _HomePageState extends State<HomePage> {
           child: SingleChildScrollView(
               reverse: true,
               child: Column(
-                children: List.generate(
-                    100,
-                    (index) => MyBotton(
-                        index: (100 - index),
-                        onPressed: () {
-                          if(100-index < level){
-                            showDialog(
-                                context: context,
-                                builder: (context) => AlertDialog(
-                                      content: Column(
-                                        children: [
-                                          // Image.asset('assets/number1.png'),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Image.asset(
-                                                'assets/leftLines.png',
-                                                width: 38,
-                                              ),
-                                              Container(
-                                                alignment: Alignment.center,
-                                                width: 100,
-                                                height: 100,
-                                                decoration: BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    border: Border.all(
-                                                        color: grey,
-                                                        width: 12)),
-                                                child: Text(
-                                                  (100 - index).toString(),
-                                                  style: TextStyle(
-                                                      fontSize: 60,
-                                                      color: Color(0xff1c114f),
-                                                      fontWeight:
-                                                          FontWeight.bold),
+                children: [
+                  ...List.generate(
+                      100,
+                      (index) => MyBotton(
+                          index: (100 - index),
+                          onPressed: () {
+                            if ((100 - index) < level) {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                        content: Column(
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                Image.asset(
+                                                  'assets/leftLines.png',
+                                                  width: 38,
                                                 ),
-                                              ),
-                                              Image.asset(
-                                                'assets/rightLines.png',
-                                                width: 38,
-                                              ),
-                                            ],
-                                          ),
-                                          Text((100 - index).toString())
-                                        ],
-                                      ),
-                                    ));
-                          }
-                          // showDialog(
-                          //     context: context,
-                          //     builder: (context) => AlertDialog(
-                          //           content: Column(
-                          //             children: [
-                          //               // Image.asset('assets/number1.png'),
-                          //               Row(
-                          //                 mainAxisAlignment:
-                          //                     MainAxisAlignment.spaceEvenly,
-                          //                 children: [
-                          //                   Image.asset(
-                          //                     'assets/leftLines.png',
-                          //                     width: 38,
-                          //                   ),
-                          //                   Container(
-                          //                     alignment: Alignment.center,
-                          //                     width: 100,
-                          //                     height: 100,
-                          //                     decoration: BoxDecoration(
-                          //                         shape: BoxShape.circle,
-                          //                         border: Border.all(
-                          //                             color: grey, width: 12)),
-                          //                     child: Text(
-                          //                       (100 - index).toString(),
-                          //                       style: TextStyle(
-                          //                           fontSize: 60,
-                          //                           color: Color(0xff1c114f),
-                          //                           fontWeight:
-                          //                               FontWeight.bold),
-                          //                     ),
-                          //                   ),
-                          //                   Image.asset(
-                          //                     'assets/rightLines.png',
-                          //                     width: 38,
-                          //                   ),
-                          //                 ],
-                          //               ),
-                          //               Text((100 - index).toString())
-                          //             ],
-                          //           ),
-                          //         )
-                          //         );
-                        })
-                        ),
-              )
-              ),
-        )
-        );
+                                                Container(
+                                                  alignment: Alignment.center,
+                                                  width: 100,
+                                                  height: 100,
+                                                  decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      border: Border.all(
+                                                          color: grey,
+                                                          width: 12)),
+                                                  child: Text(
+                                                    (100 - index).toString(),
+                                                    style: TextStyle(
+                                                        fontSize: 60,
+                                                        color:
+                                                            Color(0xff1c114f),
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  ),
+                                                ),
+                                                Image.asset(
+                                                  'assets/rightLines.png',
+                                                  width: 38,
+                                                ),
+                                              ],
+                                            ),
+                                            Text((100 - index).toString())
+                                          ],
+                                        ),
+                                      ));
+                            }
+                          })),
+                ],
+              )),
+        ));
   }
 }
 
