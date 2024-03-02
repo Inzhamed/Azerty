@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wiro/component/appbar.dart';
-import 'package:wiro/component/navbar.dart';
 import 'package:wiro/const.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const CustomAppBar(
-          score: 12,
+          score: 180,
           crowncount: 1,
           totalScore: 200,
           level: '2',
