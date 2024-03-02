@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const MyProfilePage(),
     const MyLeaderboardPage(),
   ];
-  int index = 0;
+  int index = 4;
 
   @override
   Widget build(BuildContext context) {

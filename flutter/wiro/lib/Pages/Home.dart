@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wiro/component/appbar.dart';
-import 'package:wiro/component/navbar.dart';
 import 'package:wiro/const.dart';
 
 class HomePage extends StatefulWidget {
