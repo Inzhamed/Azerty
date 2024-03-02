@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:wiro/Pages/Chat.dart';
+import 'package:wiro/Pages/Home.dart';
+import 'package:wiro/Pages/Leaderboard.dart';
+import 'package:wiro/Pages/Login.dart';
+import 'package:wiro/Pages/Profile.dart';
+import 'package:wiro/Pages/Community.dart';
+import 'package:wiro/component/navbar.dart';
+import 'package:wiro/component/prfs/prefer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,17 +14,21 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  static AppPreferences pref = AppPreferences();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        routes: {
+          "/Home": (context) => const MyHomePage(),
+          "/Login": (context) => const MyLoginPage(),
+          "/SignUp":(context) => const MySignUpPage(),
+        },
+        home: MyHomePage());
   }
 }
 
@@ -28,74 +40,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final screens = [
+    const HomePage(),
+    const MyLeaderboardPage(),
+    const MyChatPage(),
+    const CommunityClass(),
+    const MyProfilePage(),
+  ];
+  int index = 0;
+
   @override
   Widget build(BuildContext context) {
+    if (MyApp.pref.getToken() == false) {
+      return const MyLoginPage();
+    }
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.grey.shade300,
-          centerTitle: true,
-          title: const Column(
-            children: [
-              Text(
-                "Lotus",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-              ),
-              Text(
-                'igl3 al adiction',
-                style: TextStyle(fontSize: 15, color: Colors.grey),
-              )
-            ],
-          ),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                content: SizedBox(
-                                  width: 400,
-                                  height: 500,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Image.asset(
-                                        'assets/numbr1.png',
-                                        // width: 200,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ));
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(20)),
-                      width: 150,
-                      height: 150,
-                      child: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.add_box_outlined),
-                          Text('press for popup'),
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
-        ));
+      body: screens[index],
+      bottomNavigationBar: MyNavBar(
+        index: index,
+        onPressed: (int index) {
+          setState(() => this.index = index);
+        },
+      ),
+    );
   }
 }

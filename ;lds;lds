@@ -1,0 +1,73 @@
+[33mcommit eb8f0d93e2b3660bdb3616af94c600cabedb701c[m[33m ([m[1;36mHEAD -> [m[1;32mnavbar[m[33m, [m[1;31morigin/navbar[m[33m)[m
+Merge: 856cc1c cbfd91a
+Author: Merar Mabrouk <119806956+Merar-Mabrouk@users.noreply.github.com>
+Date:   Sat Mar 2 03:32:35 2024 +0100
+
+    Merge branch 'navbar' of https://github.com/Inzhamed/Azerty into navbar
+
+[33mcommit 856cc1cc131fe12a1ce2d189e72d0f04073b3ba1[m
+Author: Merar Mabrouk <119806956+Merar-Mabrouk@users.noreply.github.com>
+Date:   Sat Mar 2 03:24:19 2024 +0100
+
+    Fixed path added pop up, and login
+
+[33mcommit cbfd91a6bf88a5c113132197bf5113d16f8136e0[m
+Author: Naaylla <96737235+Naaylla@users.noreply.github.com>
+Date:   Sat Mar 2 03:02:49 2024 +0100
+
+    Pushing my soul out of my body
+    
+    send heeeeeeeeelp
+
+[33mcommit 3af9ae5b87529754efb1f1cec409e9cfaa84aa36[m
+Author: Merar Mabrouk <119806956+Merar-Mabrouk@users.noreply.github.com>
+Date:   Fri Mar 1 18:32:06 2024 +0100
+
+    fix app bar
+
+[33mcommit c9144683a14b46774ab937f7f015303e8d7a2d75[m
+Merge: 3bb58ef a1abebb
+Author: Merar Mabrouk <119806956+Merar-Mabrouk@users.noreply.github.com>
+Date:   Fri Mar 1 18:17:30 2024 +0100
+
+    Merge branch 'Appbar' of https://github.com/Inzhamed/Azerty into navbar
+
+[33mcommit 3bb58efb0b741c77e509707237ed91797ce4fdb3[m
+Author: Merar Mabrouk <119806956+Merar-Mabrouk@users.noreply.github.com>
+Date:   Fri Mar 1 18:13:26 2024 +0100
+
+    create path
+
+[33mcommit 0ec85807fea5f052fd59cf836104ec6da9d2ccdb[m
+Author: Merar Mabrouk <119806956+Merar-Mabrouk@users.noreply.github.com>
+Date:   Fri Mar 1 18:13:16 2024 +0100
+
+    create path
+
+[33mcommit a1abebb60857e0aa2ab5f7691f22d54fc44dea79[m[33m ([m[1;31morigin/Appbar[m[33m, [m[1;32mAppbar[m[33m)[m
+Author: Naaylla <96737235+Naaylla@users.noreply.github.com>
+Date:   Fri Mar 1 18:09:31 2024 +0100
+
+    pushing the appbar
+    
+    prrrrrrrrr
+
+[33mcommit aa8e5b614378d1b3b36ffd7a550725553f862d72[m
+Author: Naaylla <96737235+Naaylla@users.noreply.github.com>
+Date:   Fri Mar 1 17:52:20 2024 +0100
+
+    nayla app bar
+    
+    yaw prrr w ana chbab ga3
+
+[33mcommit 1daf57bdf0b9b4cf5f50a4991e6bfe51fc999bf0[m
+Author: Merar Mabrouk <119806956+Merar-Mabrouk@users.noreply.github.com>
+Date:   Fri Mar 1 09:50:58 2024 +0100
+
+    first commit
+
+[33mcommit bebc655e533d902f93ed25e80834124d73ef2403[m
+Author: Inzhamed <95131724+Inzhamed@users.noreply.github.com>
+Date:   Thu Feb 29 19:58:12 2024 +0100
+
+    Initial commit
