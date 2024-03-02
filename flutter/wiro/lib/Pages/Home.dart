@@ -41,7 +41,108 @@ class _HomePageState extends State<HomePage> {
                           (index) => (100 - index) == 3
                               ? StartButton(
                                   index: (100 - index),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) => AlertDialog(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(25),
+                                            ),
+                                            content: SingleChildScrollView(
+                                              child: Container(
+                                                width: double.maxFinite,
+                                                constraints:
+                                                    const BoxConstraints(
+                                                        maxHeight: 450),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    LevelLogoChange(
+                                                        index: index),
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        const Text(
+                                                          'You\'ve unlocked level. ',
+                                                          style: TextStyle(
+                                                            fontSize: 21,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color: Color(
+                                                                0xff1C104E),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          ((100 - index)
+                                                              .toString()),
+                                                          style:
+                                                              const TextStyle(
+                                                            fontSize: 21,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color: Color(
+                                                                0xff1C104E),
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      children: [
+                                                        const Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'You have successfully:',
+                                                              style: TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontSize: 17),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        SizedBox(
+                                                          height: 200,
+                                                          child: ChallengesList(
+                                                              index: index,
+                                                              level: level,
+                                                              icon1:
+                                                                  Image.asset(
+                                                                'assets/gain.png',
+                                                                height: 20,
+                                                                width: 20,
+                                                              ),
+                                                              text1:
+                                                                  "Gained 500 Lotus",
+                                                              icon2: Image.asset(
+                                                                  'assets/runing.png',
+                                                                  height: 20,
+                                                                  width: 20),
+                                                              text2:
+                                                                  "Walked +5000 steps",
+                                                              icon3: Image.asset(
+                                                                  'assets/champ.png',
+                                                                  height: 20,
+                                                                  width: 20),
+                                                              text3:
+                                                                  "Wrote 2 Articles"),
+                                                        ),
+                                                      ],
+                                                    )
+
+                                                    // Text((100 - index).toString())
+                                                  ],
+                                                ),
+                                              ),
+                                            )));
+                                  },
                                 )
                               : MyBotton(
                                   index: (100 - index),

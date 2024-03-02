@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         routes: {
           "/Home": (context) => const MyHomePage(),
           "/Login": (context) => const MyLoginPage(),
+          "/SignUp":(context) => const MySignUpPage(),
         },
         home: MyHomePage());
   }
@@ -41,18 +42,18 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final screens = [
     const HomePage(),
+    const MyLeaderboardPage(),
     const MyChatPage(),
     const MyShopPage(),
     const MyProfilePage(),
-    const MyLeaderboardPage(),
   ];
-  int index = 4;
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
-    // if (MyApp.pref.getToken() == false) {
-    //   return const MyLoginPage();
-    // }
+    if (MyApp.pref.getToken() == false) {
+      return const MyLoginPage();
+    }
     return Scaffold(
       body: screens[index],
       bottomNavigationBar: MyNavBar(

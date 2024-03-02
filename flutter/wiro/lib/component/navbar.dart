@@ -10,10 +10,20 @@ List<NavigationDestination> loc = [
         height: 32,
       ),
       label: ''),
-  const NavigationDestination(icon: Icon(Icons.star), label: ''),
-  const NavigationDestination(icon: Icon(Icons.chat), label: ''),
-  const NavigationDestination(icon: Icon(Icons.shop), label: ''),
-  const NavigationDestination(icon: Icon(Icons.person), label: ''),
+  NavigationDestination(
+      icon: Image.asset(
+        'assets/LeaderBoard.png',
+        width: 32,
+        height: 32,
+      ),
+      label: ''),
+  NavigationDestination(
+      icon: Image.asset('assets/Chat.png', width: 32, height: 32), label: ''),
+  NavigationDestination(
+      icon: Image.asset('assets/Shop.png', width: 32, height: 32), label: ''),
+  NavigationDestination(
+      icon: Image.asset('assets/Profile.png', width: 32, height: 32),
+      label: ''),
 ];
 
 class MyNavBar extends StatelessWidget {

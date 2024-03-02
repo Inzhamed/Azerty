@@ -82,7 +82,7 @@ class _MyLeaderboardPageState extends State<MyLeaderboardPage> {
                       ),
                       SizedBox(height: 22),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.35,
+                        height: MediaQuery.of(context).size.height * 0.5,
                         child: ListView(
                           children: sortedUsers.map((e) {
                             final index = sortedUsers.indexOf(e);
@@ -121,10 +121,10 @@ class Rank extends StatelessWidget {
         children: [
           index <= 2
               ? Image.asset(index == 0
-                  ? "Vectors(1).png"
+                  ? "assets/Vectors(1).png"
                   : index == 1
-                      ? "Vectors(2).png"
-                      : "Vectors(3).png")
+                      ? "assets/Vectors(2).png"
+                      : "assets/Vectors(3).png")
               : Text((index + 1).toString()),
           SizedBox(width: 11),
           Text(name),
