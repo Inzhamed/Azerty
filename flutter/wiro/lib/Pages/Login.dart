@@ -21,7 +21,10 @@ class _MyLoginPageState extends State<MyLoginPage> {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 45),
-                child: Image.asset('assets/Logo.png'),
+                child: Image.asset(
+                  'assets/Logo.png',
+                  width: 90,
+                ),
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
