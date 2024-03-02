@@ -4,7 +4,7 @@ import 'package:wiro/Pages/Home.dart';
 import 'package:wiro/Pages/Leaderboard.dart';
 import 'package:wiro/Pages/Login.dart';
 import 'package:wiro/Pages/Profile.dart';
-import 'package:wiro/Pages/Shop.dart';
+import 'package:wiro/Pages/Community.dart';
 import 'package:wiro/component/navbar.dart';
 import 'package:wiro/component/prfs/prefer.dart';
 
@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const HomePage(),
     const MyLeaderboardPage(),
     const MyChatPage(),
-    const MyShopPage(),
+    const CommunityClass(),
     const MyProfilePage(),
   ];
   int index = 0;
