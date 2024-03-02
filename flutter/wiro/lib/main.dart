@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:wiro/Pages/Chat.dart';
 import 'package:wiro/Pages/Home.dart';
 import 'package:wiro/Pages/Leaderboard.dart';
+import 'package:wiro/Pages/Login.dart';
 import 'package:wiro/Pages/Profile.dart';
 import 'package:wiro/Pages/Shop.dart';
 import 'package:wiro/component/navbar.dart';
+import 'package:wiro/component/prfs/prefer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +14,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  static AppPreferences pref = AppPreferences();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +23,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      routes: {
+        "/Home": (context) => const MyHomePage(),
+        "/Login": (context) => const MyLoginPage(),
+      },
+      home: pref.getToken() ? const MyHomePage() : const MyLoginPage(),
     );
   }
 }
@@ -45,6 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // if (MyApp.pref.getToken() == false) {
+    //   return const MyLoginPage();
+    // }
     return Scaffold(
       body: screens[index],
       bottomNavigationBar: MyNavBar(
