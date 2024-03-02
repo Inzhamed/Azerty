@@ -10,7 +10,7 @@ class MyLoginPage extends StatefulWidget {
 
 class _MyLoginPageState extends State<MyLoginPage> {
   // final size = MediaQuery.of(context).size;
-  bool khti = true;
+  bool unvisible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +55,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
               TextFormField(
                 decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.person_4_outlined),
-                    suffixIcon: khti
+                    suffixIcon: unvisible
                         ? Padding(
                             padding: const EdgeInsets.only(right: 30),
                             child: Icon(Icons.visibility_off_outlined),
