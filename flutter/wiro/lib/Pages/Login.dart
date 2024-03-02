@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wiro/main.dart';
 
 class MyLoginPage extends StatefulWidget {
   const MyLoginPage({super.key});
