@@ -2,20 +2,19 @@
 
 import 'package:flutter/material.dart';
 
-
-
 List<NavigationDestination> loc = [
-   
-    const NavigationDestination(icon: Icon(Icons.home), label: ''),
-    const NavigationDestination(icon: Icon(Icons.star), label: ''),
-    const NavigationDestination(icon: Icon(Icons.chat), label: ''),
-    const NavigationDestination(icon: Icon(Icons.shop), label: ''),
-    const NavigationDestination(icon: Icon(Icons.person), label: ''),
-  
+  NavigationDestination(
+      icon: Image.asset(
+        "assets/Home.png",
+        width: 32,
+        height: 32,
+      ),
+      label: ''),
+  const NavigationDestination(icon: Icon(Icons.star), label: ''),
+  const NavigationDestination(icon: Icon(Icons.chat), label: ''),
+  const NavigationDestination(icon: Icon(Icons.shop), label: ''),
+  const NavigationDestination(icon: Icon(Icons.person), label: ''),
 ];
-
-
-
 
 class MyNavBar extends StatelessWidget {
   const MyNavBar({
@@ -35,4 +34,3 @@ class MyNavBar extends StatelessWidget {
         onDestinationSelected: onPressed);
   }
 }
-
